@@ -36,6 +36,8 @@ $resNome = $conexao->query($sqli);
  $sqli3 = "SELECT * FROM ordemservico WHERE  ordem = '$service' ORDER BY id desc LIMIT 1";
  $resServico3 = $conexao->query($sqli3);
 
+ $sqli4 = "SELECT * FROM acessorios WHERE  ordem = '$service'";
+ $resAcessorios= $conexao->query($sqli4);
 
 
 while($primeiro = mysqli_fetch_assoc($resServico2)){
@@ -51,9 +53,9 @@ while($primeiro = mysqli_fetch_assoc($resServico2)){
       
     $data = date('d/m/Y');
     $real = DateTime::createFromFormat($formato, $data);
-    $dateIntervalReal = $real->diff($inicio);
+    $dateIntervalReal  = $real->diff($inicio);
 
-
+    
 
        
    }
@@ -70,7 +72,8 @@ while($primeiro = mysqli_fetch_assoc($resServico2)){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controle de Aparelhos</title>
-    <link rel="stylesheet" href="./CSS/index.css">
+    <link rel="stylesheet" href="./CSS/service.css">
+    <link rel="stylesheet" href="./CSS/navbar.css">
 </head>
 <body >
 <header>
@@ -84,33 +87,74 @@ while($primeiro = mysqli_fetch_assoc($resServico2)){
             <a href="./sairLogin.php">Sair</a>
                 </div>
     </header><br>
-
+ 
     <?php
-       
+      
 
-        echo"<h1 style='margin-left:1%'> Ordem de Serviço: ".$service."</h1><br>";
-
+        echo"<div class='boxInf'><h1 style='margin-left:1%'> Ordem de Serviço: ".$service."</h1><br><br><br><br>     <div class='boxSerial'>   <p>Evidencias:</p>   <img onclick='ampliar()' class='imagem' src= './uploads/".$service."/".$service."_Serial"."' alt=''><img onclick='ampliar()' class='imagem' src= './uploads/".$service."/".$service."_Evidencia1"."' alt=''><img onclick='ampliar()' class='imagem' src= './uploads/".$service."/".$service."_Evidencia2"."' alt=''>   </div>
+        <div class='amplia'> <img  src= './uploads/".$service."/".$service."_Serial"."' alt=''><button onclick='ampliarFecha()'>fechar</button> </div></div>";
+    ?>
+    
+    <div class="acessorisBox">
+    <?php
+        while($acessorios = mysqli_fetch_assoc($resAcessorios)){
+            if($acessorios['cabo']== 'on'){
+                echo"<label  for='cabo'>Cabo:</label>
+                <input id= 'cabo'type='checkbox'  disabled='disabled' checked>";
+            }else{
+                echo"<label  for='cabo'>Cabo:</label>
+                <input id= 'cabo'type='checkbox'  disabled='disabled'>";
+            }
+    
+            if($acessorios['fonte']== 'on'){
+                echo"<label for='fonte'>Fonte:</label>
+                <input id='fonte' type='checkbox' disabled='disabled' checked>";
+            }else{
+                echo"<label for='fonte'>Fonte:</label>
+                <input id='fonte' type='checkbox' disabled='disabled' >";
+            }
+           }
+           ?>
+           </div>
+           <?php
         while($os1 = mysqli_fetch_assoc($resServico1)){
 
         echo"<span style='margin-left:1%; font-weight: 900;font-size: 30px;'>Local Atual:</span> <span style='color:#1eff00; font-weight: 900;font-size: 30px;'>".$os1['setor']."</span><br><br> 
-            <p style='margin-left:1%';> dias na autorizada: ".$dateInterval-> days."</p><br><br>";
+            <p style='margin-left:1%';> Dias na autorizada: ".$dateIntervalReal-> days."<br>"."</p><br><br>";
         }
 
         while($os = mysqli_fetch_assoc($resServico)){
 
-            echo "<div style='border: 3px solid black; margin-left:1%;margin-right:1%;padding: 1%;'>
+            echo "<div style=' border-radius: 5px;border: 3px solid black; margin-left:1%;margin-right:1%;padding: 1%;'>
                     <h3>".$os['status']." ".$os['setor']."</h3>
                     <p>".$os['usuario']."</p>
                     <p>".$os['data']." as ".$os['hora']."</p>
+                    <h4>Serial: ".$os['autentica']."</h4>
+                    ";
+                    if($os['status'] == 'Produto Entregue'){
+                        echo"<br><div id='final'>Service Finalizada</div>";
+                    }
                     
-                    
-                    </div><br>"
+                   echo"</div><br>";
             
             
-            ;
+            
         }
 
 
     ?>
-</body >
+</body>
+<style>
+    #final{
+   border-radius: 10px;
+   font-weight: 900;
+   width: 11%;
+   background: green;
+   color: white;
+   display: flex;
+   justify-content: center;
+
+}
+</style>
+<script src="./JS/service.js"></script>
 </html>

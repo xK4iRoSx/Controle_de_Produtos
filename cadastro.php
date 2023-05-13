@@ -25,6 +25,16 @@ $resNome2 = $conexao->query($sqli2);
 $sqli3 = "SELECT setor FROM usuarios where usuario ='$logado'";
 $resNome3 = $conexao->query($sqli3);
 
+$sqli4 = "SELECT setor FROM usuarios where usuario ='$logado'";
+$resNome4 = $conexao->query($sqli4);
+
+while($resSetor = mysqli_fetch_assoc($resNome4)){
+
+    $setorRes = $resSetor['setor'];
+}
+
+
+
 ?>
 
 
@@ -34,7 +44,8 @@ $resNome3 = $conexao->query($sqli3);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./CSS/index.css">
+    <link rel="stylesheet" href="./CSS/cadastro.css">
+    <link rel="stylesheet" href="./CSS/navbar.css">
     <title>Controle de Aparelhos</title>
 </head>
 <body>
@@ -55,11 +66,11 @@ $resNome3 = $conexao->query($sqli3);
    
 
         <form name='form'   id='cadastroService' action="./cadastraOrdem.php?vai=<?php echo $vai ?>" method="post" >
-        
-                <h1>Digite a Service de  <?php  echo $vai?> </h1>
-                <input type="hidden" name='usuario' value="<?php while($nome2 = mysqli_fetch_assoc($resNome2)) echo $nome2['nome'] ?> ">
+         
+                <h1>Digite a Service de  <span class='setor'> <?php  echo $vai.' '. $setorRes ?></span> </h1>
+                <input type="hidden" name='usuario' value="<?php while($nome2 = mysqli_fetch_assoc($resNome2)) echo $nome2['nome'] ?>">
                 <input type="number" onkeyup="submitform(event)" name='service' id='service' placeholder="Digite a Service" >
-                <input type="hidden" name = "setor" value=" <?php while($nome3 = mysqli_fetch_assoc($resNome3)) echo $nome3['setor'] ?>">
+                <input type="hidden" name = "setor" value="<?php while($nome3 = mysqli_fetch_assoc($resNome3)) echo $nome3['setor'] ?>">
                 <input type="hidden" name='status' value="<?php  echo $vai ?>">
                
 

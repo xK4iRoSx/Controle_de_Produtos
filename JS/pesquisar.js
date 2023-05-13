@@ -13,7 +13,7 @@ function digitar(event){
                         if(document.querySelector('#pesquisa').length == ""){
                             document.querySelector('.filter').style.display = 'none'
                         }else{
-                            document.querySelector('.filter').style.display = 'block'
+                            document.querySelector('.filter').style.display = 'flex'
                         }
                     } else {
                     
@@ -21,7 +21,7 @@ function digitar(event){
                         if(document.querySelector('#pesquisa').value == ""){
                             document.querySelector('.filter').style.display = 'none'
                         }else{
-                            document.querySelector('.filter').style.display = 'block'
+                            document.querySelector('.filter').style.display = 'flex'
                         }
                         }
                 });

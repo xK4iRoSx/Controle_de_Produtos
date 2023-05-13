@@ -16,7 +16,7 @@
                 <h1>Login</h1>
                 <input type="text" name='usuario' placeholder="login">
                 <input type="password" name='senha' placeholder="senha">
-                <input type="submit" name='submit' value="login">
+                <input type="submit"id="submit" name='submit' value="login">
 
 
     </form>

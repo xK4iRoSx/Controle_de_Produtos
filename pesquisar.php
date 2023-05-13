@@ -23,6 +23,13 @@ include('conexaoDB.php');
 $sql = "SELECT * FROM service ORDER BY id DESC";
 $resService = $conexao->query($sql);
 
+
+
+
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +37,7 @@ $resService = $conexao->query($sql);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./CSS/index.css">
+    <link rel="stylesheet" href="./CSS/navbar.css">
     <link rel="stylesheet" href="./CSS/pesquisar.css">
     <title>Controle de Aparelhos</title>
 </head>
@@ -45,23 +52,28 @@ $resService = $conexao->query($sql);
                 <?php while($nome = mysqli_fetch_assoc($resNome)){echo "<h3>".$nome['nome']."</h3>";} ?>
             <a href="./sairLogin.php">Sair</a>
                 </div>
-    </header><br>
+    </header><br><br>
 
+<?php
 
+?>
 
 <div class="boxPesq">
     <input type="search" id="pesquisa"  onkeypress="digitar(event)" placeholder="Buscar">
-</div><br>
+</div><br><br>
 
 
 <div class='filter' style="display: none;">
         <?php
+       
+            
+        
         while($os = mysqli_fetch_assoc($resService)){
             echo"
 
                 <div class='servicos'>
 
-                        <a href='./service.php?service=".$os['ordem']."'><h1>Service: ".$os['ordem']."</h1></a>
+                        <a href='./service.php?service=".$os['ordem']."'><h1>".$os['ordem']."</h1><br><br> </a>
                        
 
                 </div>
@@ -70,6 +82,7 @@ $resService = $conexao->query($sql);
             
             ";
         }
+    
 ?>
 </div>
 

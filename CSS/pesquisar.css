@@ -9,5 +9,30 @@
 }
 
 #pesquisa{
+    height: 30px;
+    font-size: 25px;
+    border-radius: 5px;
     width: 80%;
 }
+
+.filter{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+
+}
+
+.servicos{
+    margin-left: 12%;
+    width: 50%;
+    
+}
+
+.servicos a{
+    text-decoration: none;
+    font-size: 15px;
+    color: black;
+}
+

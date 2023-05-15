@@ -145,10 +145,10 @@ while($primeiro = mysqli_fetch_assoc($resServico2)){
         while($os1 = mysqli_fetch_assoc($resServico1)){
 
             if($os1['status']=="Produto Entregue"){
-                echo"<span style='margin-left:1%; font-weight: 900;font-size: 30px;'>Local Atual:</span> <span style='color:#1eff00; font-weight: 900;font-size: 30px;'>".$os1['setor']."</span><br><br> 
+                echo"<span style='margin-left:1%; font-weight: 900;font-size: 30px;'>Local Atual:</span> <span style='color: green; font-weight: 900;font-size: 30px;'>".$os1['setor']."</span><br><br> 
                 <p style='margin-left:1%';> Dias na autorizada: ".$dateInterval-> days."<br>"."</p><br><br>";
             }else{
-        echo"<span style='margin-left:1%; font-weight: 900;font-size: 30px;'>Local Atual:</span> <span style='color:#1eff00; font-weight: 900;font-size: 30px;'>".$os1['setor']."</span><br><br> 
+        echo"<span style='margin-left:1%; font-weight: 900;font-size: 30px;'>Local Atual:</span> <span style='color: green; font-weight: 900;font-size: 30px;'>".$os1['setor']."</span><br><br> 
             <p style='margin-left:1%';> Dias na autorizada: ".$dateIntervalReal-> days."<br>"."</p><br><br>";
             }
        

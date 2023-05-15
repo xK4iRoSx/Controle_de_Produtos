@@ -91,8 +91,33 @@ while($primeiro = mysqli_fetch_assoc($resServico2)){
     <?php
       
 
-        echo"<div class='boxInf'><h1 style='margin-left:1%'> Ordem de Serviço: ".$service."</h1><br><br><br><br>     <div class='boxSerial'>   <p>Evidencias:</p>   <img onclick='ampliar()' class='imagem' src= './uploads/".$service."/".$service."_Serial"."' alt=''><img onclick='ampliar()' class='imagem' src= './uploads/".$service."/".$service."_Evidencia1"."' alt=''><img onclick='ampliar()' class='imagem' src= './uploads/".$service."/".$service."_Evidencia2"."' alt=''>   </div>
-        <div class='amplia'> <img  src= './uploads/".$service."/".$service."_Serial"."' alt=''><button onclick='ampliarFecha()'>fechar</button> </div></div>";
+        echo"<div class='boxInf'>
+                <h1 style='margin-left:1%'> Ordem de Serviço: ".$service."</h1><br><br><br><br>     
+            
+                                <div class='boxSerial'>   
+                                        <p>Evidencias:</p>   
+                                        <img onclick='ampliarSerial()' class='imagem' src= './uploads/".$service."/".$service."_Serial"."' alt=''>
+                                        <img onclick='ampliarEvidencia1()' class='imagem' src= './uploads/".$service."/".$service."_Evidencia1"."' alt=''>
+                                        <img onclick='ampliarEvidencia2()' class='imagem' src= './uploads/".$service."/".$service."_Evidencia2"."' alt=''>  
+                                </div>
+
+
+                            <div class='ampliarSerial'> 
+                                    <img  src= './uploads/".$service."/".$service."_Serial"."' alt=''>
+                                    <button onclick='ampliarFechaSerial()'>X</button> 
+                            </div>
+                            
+                            <div class='ampliarEvidencia1'> 
+                                    <img  src= './uploads/".$service."/".$service."_Evidencia1"."' alt=''>
+                                    <button onclick='ampliarFechaEvidencia1()'>X</button> 
+                            </div>
+
+                            <div class='ampliarEvidencia2'> 
+                                    <img  src= './uploads/".$service."/".$service."_Evidencia2"."' alt=''>
+                                    <button onclick='ampliarFechaEvidencia2()'>X</button> 
+                            </div>
+
+        </div>";
     ?>
     
     <div class="acessorisBox">
@@ -148,7 +173,7 @@ while($primeiro = mysqli_fetch_assoc($resServico2)){
     #final{
    border-radius: 10px;
    font-weight: 900;
-   width: 11%;
+   width: 13%;
    background: green;
    color: white;
    display: flex;

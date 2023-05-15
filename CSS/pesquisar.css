@@ -20,19 +20,31 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
    
-
 }
 
 .servicos{
-    margin-left: 12%;
-    width: 50%;
+display: flex;
+align-items: center;
+width: 80%;
+height: 50px;
+transition: 1s all;
+
     
+}
+
+.servicos:hover a{
+color: rgb(0, 0, 255);
+text-shadow: 1.1px 1.1px 1.1px black;
+font-size: 22px;
+transition: .3s all;
 }
 
 .servicos a{
     text-decoration: none;
-    font-size: 15px;
+    font-size: 20px;
     color: black;
+    
 }
 

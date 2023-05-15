@@ -73,10 +73,10 @@ $resService = $conexao->query($sql);
 
                 <div class='servicos'>
 
-                        <a href='./service.php?service=".$os['ordem']."'><h1>".$os['ordem']."</h1><br><br> </a>
+                        <a href='./service.php?service=".$os['ordem']."'><h1>".$os['ordem']."</h1> </a>
                        
 
-                </div>
+                </div><br><br>
             
             
             

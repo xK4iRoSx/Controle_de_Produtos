@@ -99,7 +99,7 @@ if(mysqli_num_rows($resServico) == 1){
         <input type="submit" name="sim" value="SIM"> <br><br>
        
   </form>
-  <form action="cadastreService.php?usuario=<?php echo $_GET['usuario']?>&setor=<?php echo $_GET['setor']?>&service=<?php echo $_GET['service']?>&data=<?php echo $_GET['data']?>&hora=$<?php echo $_GET['hora']?>&vai=<?php echo $vai?>" method="post">
+  <form action="cadastreService.php?usuario=<?php echo $_GET['usuario']?>&setor=<?php echo $_GET['setor']?>&service=<?php echo $_GET['service']?>&data=<?php echo $_GET['data']?>&hora=<?php echo $_GET['hora']?>&vai=<?php echo $vai?>" method="post">
         <input type="hidden" name="autentica" value ="Serial incorreto">
         
         <input type="submit" name="nao" value="NÃO">

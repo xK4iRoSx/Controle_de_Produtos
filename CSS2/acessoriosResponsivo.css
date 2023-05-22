@@ -1,0 +1,17 @@
+@media (max-width: 800px) {
+
+    body h1{
+        font-size: 50px;
+    }
+
+    form{
+        gap: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 50%;
+        height: 20%;
+       
+    }
+}

@@ -25,6 +25,7 @@ $resNome2 = $conexao->query($sqli2);
 $saida ='Saida';
 $entrada ='Entrada'
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,22 +34,39 @@ $entrada ='Entrada'
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/index.css">
     <link rel="stylesheet" href="./CSS/navbar.css">
+    <link rel="stylesheet" href="./CSS2/navbarResponsivo.css">
+    <link rel="stylesheet" href="./CSS2/indexResponsivo.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <title>Controle de Aparelhos</title>
 </head>
 <body>
 
 <header>
             <div class="navbar">
+                <div class="menu">
+                    <i id="fechar" onclick="fecharMenu()"class="fi fi-br-cross"></i>
+                    <i id="abrir" onclick="abrirMenu()" class="fi fi-rr-menu-burger"></i>
+                </div>
+               
                 <a href="./pesquisar.php">Pesquisa</a>
-                
             </div>
+
+           
             <div class="navbarLogin">
             <?php while($nome = mysqli_fetch_assoc($resNome)){echo "<h3>".$nome['nome']."</h3>";} ?>
                     <a href="./sairLogin.php">Sair</a>
                     
                 </div>
-    </header><br>
-    <h1>Escolha o Status:</h1> 
+
+                
+    </header>
+
+    <div class="navbarMo">
+                <a href="./pesquisar.php">Pesquisa</a>
+                <a href="./sairLogin.php">Sair</a>
+            </div><br>
+    <h1>Escolha o Status:</h1>
 <div class="box">
     
         <form id="entrada" action="./cadastro.php?vai=<?php echo $entrada?>" method='post'>
@@ -62,4 +80,5 @@ $entrada ='Entrada'
 
   </div>  
 </body>
+<script src="./JS/navbarMo.js"></script>
 </html>

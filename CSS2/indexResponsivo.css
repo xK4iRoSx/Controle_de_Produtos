@@ -1,0 +1,13 @@
+
+@media (max-width: 800px) {
+    #saida input,
+#entrada input{
+
+    width: 80%;
+    height: 80px;
+    border-radius: 15px;
+    font-size: 2rem;
+
+
+}
+}

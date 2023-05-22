@@ -39,12 +39,19 @@ $resService = $conexao->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/navbar.css">
     <link rel="stylesheet" href="./CSS/pesquisar.css">
+    <link rel="stylesheet" href="./CSS2/navbarResponsivo.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <title>Controle de Aparelhos</title>
 </head>
 <body>
 
 <header>
             <div class="navbar">
+            <div class="menu">
+                    <i id="fechar" onclick="fecharMenu()"class="fi fi-br-cross"></i>
+                    <i id="abrir" onclick="abrirMenu()" class="fi fi-rr-menu-burger"></i>
+                </div>
                 <a href="./cadastro.php?vai=Entrada">Entrada</a>
                 <a href="./cadastro.php?vai=Saida">Saida</a>
             </div>
@@ -52,7 +59,14 @@ $resService = $conexao->query($sql);
                 <?php while($nome = mysqli_fetch_assoc($resNome)){echo "<h3>".$nome['nome']."</h3>";} ?>
             <a href="./sairLogin.php">Sair</a>
                 </div>
-    </header><br><br>
+    </header>
+
+    <div class="navbarMo">
+                <a href="./pesquisar.php">Pesquisa</a>
+                <a href="./cadastro.php?vai=Entrada">Entrada</a>
+                <a href="./cadastro.php?vai=Saida">Saida</a>
+                <a href="./sairLogin.php">Sair</a>
+            </div><br>
 
 <?php
 
@@ -94,6 +108,7 @@ $resService = $conexao->query($sql);
 <script>
     document.getElementById('pesquisa').focus();
 </script>
+<script src="./JS/navbarMo.js"></script>
 </html>
 
 

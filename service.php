@@ -74,10 +74,18 @@ while($primeiro = mysqli_fetch_assoc($resServico2)){
     <title>Controle de Aparelhos</title>
     <link rel="stylesheet" href="./CSS/service.css">
     <link rel="stylesheet" href="./CSS/navbar.css">
+    <link rel="stylesheet" href="./CSS2/navbarResponsivo.css">
+    <link rel="stylesheet" href="./CSS2/serviceResponsivo.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 </head>
 <body >
 <header>
             <div class="navbar">
+            <div class="menu">
+                    <i id="fechar" onclick="fecharMenu()"class="fi fi-br-cross"></i>
+                    <i id="abrir" onclick="abrirMenu()" class="fi fi-rr-menu-burger"></i>
+                </div>
                 <a href="./pesquisar.php">Pesquisa</a>
                 <a href="./cadastro.php?vai=Entrada">Entrada</a>
                 <a href="./cadastro.php?vai=Saida">Saida</a>
@@ -86,7 +94,14 @@ while($primeiro = mysqli_fetch_assoc($resServico2)){
             <?php while($nome = mysqli_fetch_assoc($resNome)){echo "<h3>".$nome['nome']."</h3>";} ?>
             <a href="./sairLogin.php">Sair</a>
                 </div>
-    </header><br>
+    </header>
+    
+    <div class="navbarMo">
+                <a href="./pesquisar.php">Pesquisa</a>
+                <a href="./cadastro.php?vai=Entrada">Entrada</a>
+                <a href="./cadastro.php?vai=Saida">Saida</a>
+                <a href="./sairLogin.php">Sair</a>
+            </div><br>
  
     <?php
       
@@ -188,4 +203,5 @@ while($primeiro = mysqli_fetch_assoc($resServico2)){
 }
 </style>
 <script src="./JS/service.js"></script>
+<script src="./JS/navbarMo.js"></script>
 </html>

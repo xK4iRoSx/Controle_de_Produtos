@@ -43,6 +43,7 @@ if((!isset($_SESSION['usuario']) == true) and (!isset($_SESSION['senha'])== true
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/uploads.css">
+    <link rel="stylesheet" href="./CSS2/uploadsResponsivo.css">
     <title>Document</title>
 </head>
 <body><br>

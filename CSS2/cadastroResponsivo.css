@@ -1,0 +1,13 @@
+@media (max-width: 800px) {
+#service{
+    width: 90%;
+}
+
+form h1{
+    font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+}

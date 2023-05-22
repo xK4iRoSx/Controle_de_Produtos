@@ -48,6 +48,7 @@ $resutado = mysqli_query($conexao, "INSERT INTO acessorios (ordem,cabo,fonte)
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/acessorios.css">
+    <link rel="stylesheet" href="./CSS2/acessoriosResponsivo.css">
     <title>Acessorios</title>
 </head>
 <body> 
@@ -66,7 +67,7 @@ $resutado = mysqli_query($conexao, "INSERT INTO acessorios (ordem,cabo,fonte)
         <input type="submit" name="submit">
        
      
-    </form>
+    </form><br><br>
     <h6>caso não tenha acessorios não marque nada</h6>
 </body>
 </html>

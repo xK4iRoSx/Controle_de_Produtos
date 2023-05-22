@@ -80,7 +80,9 @@ while($primeiro = mysqli_fetch_assoc($resServico2)){
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 </head>
 <body >
-<header>
+
+    <div style="height: 100px;">
+    <header>
             <div class="navbar">
             <div class="menu">
                     <i id="fechar" onclick="fecharMenu()"class="fi fi-br-cross"></i>
@@ -95,6 +97,8 @@ while($primeiro = mysqli_fetch_assoc($resServico2)){
             <a href="./sairLogin.php">Sair</a>
                 </div>
     </header>
+
+</div>
     
     <div class="navbarMo">
                 <a href="./pesquisar.php">Pesquisa</a>
@@ -114,7 +118,7 @@ while($primeiro = mysqli_fetch_assoc($resServico2)){
                                         <img onclick='ampliarSerial()' class='imagem' src= './uploads/".$service."/".$service."_Serial.jpg"."' alt=''>
                                         <img onclick='ampliarEvidencia1()' class='imagem' src= './uploads/".$service."/".$service."_Evidencia1.jpg"."' alt=''>
                                         <img onclick='ampliarEvidencia2()' class='imagem' src= './uploads/".$service."/".$service."_Evidencia2.jpg"."' alt=''>  
-                                </div>
+                                </div><br>
 
 
                             <div class='ampliarSerial'> 
@@ -155,7 +159,7 @@ while($primeiro = mysqli_fetch_assoc($resServico2)){
             }
            }
            ?>
-           </div>
+           </div><br>
            <?php
         while($os1 = mysqli_fetch_assoc($resServico1)){
 
@@ -199,7 +203,18 @@ while($primeiro = mysqli_fetch_assoc($resServico2)){
    color: white;
    display: flex;
    justify-content: center;
+   text-align: center;
 
+}
+
+@media (max-width: 800px){
+    #final{ 
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        width: 20%;
+        font-size: 10px;
+    }
 }
 </style>
 <script src="./JS/service.js"></script>

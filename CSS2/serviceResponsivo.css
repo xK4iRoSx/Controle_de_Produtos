@@ -9,8 +9,11 @@
         display: flex;
         flex-direction: column; 
     }
+   #final{
+        width: 50%;
+   }
 
-    .ampliarEvidencia1,
+.ampliarEvidencia1,
 .ampliarEvidencia2,
 .ampliarSerial{
     display: none;

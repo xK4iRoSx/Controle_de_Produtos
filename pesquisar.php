@@ -46,7 +46,9 @@ $resService = $conexao->query($sql);
 </head>
 <body>
 
-<header>
+
+    <div style="height: 100px;">
+    <header>
             <div class="navbar">
             <div class="menu">
                     <i id="fechar" onclick="fecharMenu()"class="fi fi-br-cross"></i>
@@ -60,6 +62,7 @@ $resService = $conexao->query($sql);
             <a href="./sairLogin.php">Sair</a>
                 </div>
     </header>
+</div>
 
     <div class="navbarMo">
                 <a href="./pesquisar.php">Pesquisa</a>

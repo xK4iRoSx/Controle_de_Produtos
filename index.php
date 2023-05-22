@@ -42,7 +42,9 @@ $entrada ='Entrada'
 </head>
 <body>
 
-<header>
+
+    <div style="height: 100px;">
+    <header>
             <div class="navbar">
                 <div class="menu">
                     <i id="fechar" onclick="fecharMenu()"class="fi fi-br-cross"></i>
@@ -61,6 +63,8 @@ $entrada ='Entrada'
 
                 
     </header>
+
+</div>
 
     <div class="navbarMo">
                 <a href="./pesquisar.php">Pesquisa</a>

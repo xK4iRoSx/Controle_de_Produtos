@@ -52,7 +52,7 @@ while($resSetor = mysqli_fetch_assoc($resNome4)){
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <title>Controle de Aparelhos</title>
 </head>
-<body>
+<body><div style="height: 100px;">
     <header>
             <div class="navbar">
             
@@ -71,6 +71,7 @@ while($resSetor = mysqli_fetch_assoc($resNome4)){
                     
                 </div>
     </header>
+    </div>
     <div class="navbarMo">
     <a href="./pesquisar.php">Pesquisa</a>
                 <a href="./cadastro.php?vai=Entrada">Entrada</a>

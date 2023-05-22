@@ -80,14 +80,14 @@ if(mysqli_num_rows($resServico) == 1){
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pr-br">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./CSS/cadastreService.css">
   <link rel="stylesheet" href="./CSS2/cadastreServiceReponsivo.css">
-  <title>Document</title>
+  <title>Confirme o serial</title>
 </head>
 <body>
   <?php echo $status ?>

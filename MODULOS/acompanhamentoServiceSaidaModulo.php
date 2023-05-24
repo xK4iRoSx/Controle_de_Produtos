@@ -42,7 +42,7 @@ while($ordem = mysqli_fetch_assoc($ordems)){
                 if($seg == 1){
                     echo" há 1 segundo";
                 }else{
-                    echo "<span class='tempo'>".$seg."</span> segundos";
+                    echo "<span class='tempo'>há ".$seg."</span> segundos";
                 }
                    
 
@@ -51,7 +51,7 @@ while($ordem = mysqli_fetch_assoc($ordems)){
                     if($min == 1){
                         echo" há 1 minuto";
                     }else{
-                         echo"<span class='tempo'>".$min."</span> minutos";
+                         echo"<span class='tempo'>há ".$min."</span> minutos";
                     }
                  
 
@@ -59,14 +59,14 @@ while($ordem = mysqli_fetch_assoc($ordems)){
                 if($hrs == 1){
                     echo" há 1 horas";
                 }else{
-                    echo "<span class='tempo'>".$hrs."</span> horas";
+                    echo "<span class='tempo'>há ".$hrs."</span> horas";
                 }
              
               }else if($dia <= 7){
                 if($dia == 1){
                     echo" há 1 dia";
                 }else{
-                    echo "<span class='tempo'>".$dia."</span> dias";
+                    echo "<span class='tempo'>há ".$dia."</span> dias";
                 }
                 
 
@@ -74,7 +74,7 @@ while($ordem = mysqli_fetch_assoc($ordems)){
                 if($sen == 1){
                     echo" há 1 semana";
                 }else{
-                    echo "<span class='tempo'>".$sen."</span> semanas";
+                    echo "<span class='tempo'>há ".$sen."</span> semanas";
                 }
                
                 
@@ -82,7 +82,7 @@ while($ordem = mysqli_fetch_assoc($ordems)){
                 if($mes == 1){
                     echo" há 1 mês";
                 }else{
-                    echo "<span class='tempo'>".$mes."</span> mesês";
+                    echo "<span class='tempo'>há ".$mes."</span> mesês";
                 }
                
                 
@@ -90,7 +90,7 @@ while($ordem = mysqli_fetch_assoc($ordems)){
                 if($ano == 1){
                     echo" há 1 ano";
                 }else{
-                    echo "<span class='tempo'>".$ano."</span> meses";
+                    echo "<span class='tempo'>há ".$ano."</span> anos";
                 }
                
                 

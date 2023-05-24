@@ -34,7 +34,7 @@ date_default_timezone_set('America/Fortaleza');
 
     $status = $_POST['status'];
 
-    $data = date('d/m/Y');
+    $data = date('d-m-Y');
 
     $hora = date('H:i:s');
 

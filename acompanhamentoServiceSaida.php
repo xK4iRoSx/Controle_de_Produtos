@@ -1,6 +1,5 @@
-<!-- Sistema E Visual da pagina de pesquisa -->
-
 <?php
+
 
 session_start();
 include_once('conexaoDB.php');
@@ -15,22 +14,10 @@ $sqli = "SELECT nome FROM usuarios where usuario ='$logado'";
 $resNome = $conexao->query($sqli);
 
 
-?>
-
-<?php
-
-include('conexaoDB.php');
-$sql = "SELECT * FROM service ORDER BY id DESC";
-$resService = $conexao->query($sql);
-
-
-
-
-
-
-
 
 ?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -38,17 +25,16 @@ $resService = $conexao->query($sql);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/navbar.css">
-    <link rel="stylesheet" href="./CSS/pesquisar.css">
     <link rel="stylesheet" href="./CSS2/navbarResponsivo.css">
-   
+    <link rel="stylesheet" href="./CSS/acompanhamentoServiceSaida.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-    <title>Controle de Aparelhos</title>
+    <title>Acompalhamento de Saida</title>
 </head>
 <body>
+    
 
-
-    <div style="height: 100px;">
+ <div style="height: 100px;">
     <header>
             <div class="navbar">
             <div class="menu">
@@ -72,48 +58,27 @@ $resService = $conexao->query($sql);
                 <a href="./sairLogin.php">Sair</a>
             </div><br>
 
-<?php
 
-?>
+<div class="titulo">
+    <h1> APARELHO EM MOVIMENTO ENTRE SETORES</h1>
+</div><br>
 
-<div class="boxPesq">
-    <input type="search" id="pesquisa"  onkeypress="digitar(event)" placeholder="Buscar">
-</div><br><br>
+<div class="infor"></div>
 
 
-<div class='filter' style="display: none;">
-        <?php
-       
-            
-        
-        while($os = mysqli_fetch_assoc($resService)){
-            echo"
 
-                <div class='servicos'>
 
-                        <a href='./service.php?service=".$os['ordem']."'><h1>".$os['ordem']."</h1> </a>
-                       
-
-                </div><br><br>
-            
-            
-            
-            ";
-        }
     
-?>
-</div>
-
 </body>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="./JS/pesquisar.js">
+<script  type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+<script> 
+
+
+setInterval( function pesquisar(){
+       $.post("./MODULOS/acompanhamentoServiceSaidaModulo.php", function(x) { $(".infor").html(x); } );
        
-</script>
-<script>
-    document.getElementById('pesquisa').focus();
+},1000)
 </script>
 <script src="./JS/navbarMo.js"></script>
+
 </html>
-
-
-

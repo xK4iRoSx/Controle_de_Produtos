@@ -43,7 +43,7 @@ $resNome = $conexao->query($sqli);
 while($primeiro = mysqli_fetch_assoc($resServico2)){
    while($ultimo = mysqli_fetch_assoc($resServico3)) {
 
-    $formato = 'd/m/Y';
+    $formato = 'd-m-Y';
     $data_inicio = $primeiro['data'];
     $data_fim = $ultimo['data'];
     $inicio =DateTime::createFromFormat($formato,$data_inicio );
@@ -51,7 +51,7 @@ while($primeiro = mysqli_fetch_assoc($resServico2)){
     $fim =DateTime::createFromFormat($formato,$data_fim );
     $dateInterval = $fim->diff($inicio);
       
-    $data = date('d/m/Y');
+    $data = date('d-m-Y');
     $real = DateTime::createFromFormat($formato, $data);
     $dateIntervalReal  = $real->diff($inicio);
 
